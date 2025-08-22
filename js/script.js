@@ -11,95 +11,87 @@ async function loadComponent(id, file) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  loadComponent("header", "header.html");
-  loadComponent("footer", "footer.html");
+document.addEventListener("DOMContentLoaded", async () => {
+  // Load header & footer first
+  await loadComponent("header", "header.html");
+  await loadComponent("footer", "footer.html");
 
-  const btnNavEl = document.querySelector(".btn-mobile-nav");
   const headerEl = document.querySelector(".header");
+  const btnNavEl = document.querySelector(".btn-mobile-nav");
 
+  // Mobile nav toggle
   if (btnNavEl) {
     btnNavEl.addEventListener("click", function () {
       headerEl.classList.toggle("nav-open");
     });
   }
 
-  // SMOOTH SCROLLING ANIMATION
-  const allLinks = document.querySelectorAll(".logo-scroll");
-
-  allLinks.forEach(function (link) {
+  // Smooth scrolling for links
+  document.querySelectorAll(".logo-scroll").forEach(link => {
     link.addEventListener("click", function (e) {
       e.preventDefault();
       const href = link.getAttribute("href");
-      console.log(href);
 
-      // Scroll back to top
       if (href === "#") {
         window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-
-      // Scroll to other section
-      if (href !== "#" && href.startsWith("#")) {
+      } else if (href.startsWith("#")) {
         const sectionEl = document.querySelector(href);
         if (sectionEl) sectionEl.scrollIntoView({ behavior: "smooth" });
       }
 
-      // Close mobile nav
       if (link.classList.contains("main-nav-link")) {
         headerEl.classList.remove("nav-open");
       }
     });
   });
 
-  // STICKY NAVIGATION
-  const sectionHeroEl = document.querySelector(".section-hero");
+  // Dropdown toggle
+  document.querySelectorAll(".nav-dropdown > a").forEach(dropLink => {
+    dropLink.addEventListener("click", function (e) {
+      e.preventDefault();
 
-  if (sectionHeroEl) {
-    const obs = new IntersectionObserver(
-      function (entries) {
-        const ent = entries[0];
-        if (!ent.isIntersecting) {
-          document.body.classList.add("sticky");
-        } else {
-          document.body.classList.remove("sticky");
+      // Close other open dropdowns
+      document.querySelectorAll(".dropdown-menu").forEach(menu => {
+        if (menu !== this.nextElementSibling) {
+          menu.style.display = "none";
         }
-      },
-      {
-        root: null,
-        threshold: 0,
-        rootMargin: "-80px",
-      }
-    );
+      });
 
-    obs.observe(sectionHeroEl);
-  }
-});
-
-// Handle dropdown toggle on click
-document.querySelectorAll(".nav-dropdown > a").forEach(dropLink => {
-  dropLink.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    // Close other open dropdowns first
-    document.querySelectorAll(".dropdown-menu").forEach(menu => {
-      if (menu !== this.nextElementSibling) {
-        menu.style.display = "none";
-      }
+      // Toggle current one
+      const dropdown = this.nextElementSibling;
+      dropdown.style.display =
+        dropdown.style.display === "block" ? "none" : "block";
     });
-
-    // Toggle this one
-    const dropdown = this.nextElementSibling;
-    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
   });
-});
 
-// Optional: Close dropdown when clicking outside
-document.addEventListener("click", function (e) {
-  if (!e.target.closest(".nav-dropdown")) {
-    document.querySelectorAll(".dropdown-menu").forEach(menu => {
-      menu.style.display = "none";
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".nav-dropdown")) {
+      document.querySelectorAll(".dropdown-menu").forEach(menu => {
+        menu.style.display = "none";
+      });
+    }
+  });
+
+  // Page transition links
+  const main = document.querySelector("main");
+
+  document.querySelectorAll("a").forEach(link => {
+    const href = link.getAttribute("href");
+    if (!href || href.startsWith("#") || link.target === "_blank") return;
+
+    link.addEventListener("click", e => {
+      if (link.hostname === window.location.hostname) {
+        e.preventDefault();
+        main.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500);
+      }
     });
-  }
+  });
+
+  // Reset transition on load
+  main.classList.remove("fade-out");
 });
-
-
