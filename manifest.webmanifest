@@ -1,0 +1,10 @@
+{
+"icon": [
+  {"src": "asstes/logoOnly",
+    "type": "image/png", "sizes":
+  "192x181"},
+  {"src": "assets/logoOnly",
+  "type": "image/png", "sizes":
+"512x484"}
+]
+}

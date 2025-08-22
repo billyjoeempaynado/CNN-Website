@@ -1,0 +1,109 @@
+.accordion-section {
+  padding: 4.8rem 0 9.6rem 0;
+}
+
+.accordion-container {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.section-faq {
+  padding: 0%;
+}
+
+.frequently-ask {
+  padding: 2rem;
+  background-color: #3a8842;
+  height: 50vh;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+
+.faq-header {
+  font-size: 4.4rem;
+  margin: 0 0 2rem 2rem;
+  color: #fff;
+}
+
+.section-header {
+  font-size: 3.2rem;
+  margin: 0 0 2rem 2rem;
+}
+
+
+.accordion-holder {
+ border-top: 1px solid #3a8842;
+  max-width: 130rem;
+  background-color: white;
+  padding: 10px;
+  margin: auto 5px;
+}
+
+.accodtion-box {
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.accordion-heading {
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion-sub-header{
+  font-size: 2.4rem;
+  padding: 1rem;
+}
+
+.accordion-header {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.accordion-content {
+  margin-left: 5rem;
+  margin-right: 1.5rem;
+  overflow: hidden;
+  height: 0;
+  transition: all .5s ease;
+  
+}
+
+.accordion-content li {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-left: 5rem;
+  padding-top: 1rem;
+}
+.active {
+  padding-bottom: 1rem;
+}
+
+.accordion-icon {
+  font-weight: 600;
+}
+
+.accordion-content p {
+  padding: 1.5rem 0 1rem 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: justify;
+} 
+
+.no-dot {
+  list-style: none;
+}
+
