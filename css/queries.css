@@ -60,6 +60,18 @@
     font-size: 50%;
   }
 
+  .page-title {
+    height: 30vh;
+  }
+
+  .footer {
+  padding: 8rem 0;
+  }
+
+  .connector-row .horizontal.wide {
+  width: 300px;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     padding: 0 8rem;
@@ -163,6 +175,9 @@
 /* ************************ */
 
 @media(max-width: 47em) {
+   .heading-secondary, .heading-tertiary, .platform-description {
+    text-align: center;
+  }
   
   .box-title {
     font-size: 1.6rem;
@@ -203,6 +218,29 @@
   grid-template-columns: repeat(2, 1fr);
   }
 
+  .board-member {
+    width: 200px;
+    padding: 1.5rem;
+  }
+
+  .board-member h3 {
+    font-size: 1.2rem;
+  }
+
+  .board-member p {
+    font-size: 0.9rem;
+  }
+
+  .connector-row .horizontal {
+    width: 300px; /* ✅ shorter lines for fewer members */
+  }
+
+  .connector-row .horizontal.wide {
+    width: 100%; /* auto adjust */
+    max-width: 90vw;
+  }
+
+
 
 }
 
@@ -211,6 +249,10 @@
 /* ************************ */
 
 @media(max-width: 40em) {
+
+   .connector-row .horizontal.wide {
+  width: 275px;
+  }
 
   .section-hero {
     background-color: #fff;
@@ -258,6 +300,11 @@
     padding: 1rem;
   }
 
+  
+  .page-title {
+    height: 30vh;
+  }
+
   .box-description {
     font-size: 1.2rem;
     
@@ -289,8 +336,26 @@
   }
   
 
+   .board-member {
+    width: 100%;   /* ✅ full width on mobile */
+  }
+
+  .board-member img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .connector-row .horizontal {
+    display: none; /* ✅ hide connectors on very small screens */
+  }
+
+  .connector-row .vertical {
+    display: none;
+  }
   
 }
+
+
 
 
 

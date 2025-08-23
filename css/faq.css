@@ -15,17 +15,6 @@
   padding: 0%;
 }
 
-.frequently-ask {
-  padding: 2rem;
-  background-color: #3a8842;
-  height: 50vh;
-
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  justify-content: flex-end;
-  flex-direction: column;
-}
 
 
 .faq-header {
