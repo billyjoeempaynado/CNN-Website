@@ -47,6 +47,11 @@
     gap: 3.2rem;
   }
 
+    .container {
+    max-width: 100%;
+    padding: 0 2rem;
+  }
+
 }
 
 /* ************************ */
@@ -78,7 +83,7 @@
   }
 
   .hero-img {
-    width: 60%;
+    width: 80%;
   }
 
   .hero-content-box, .hero-img-box {
@@ -286,6 +291,12 @@
     
   }
 
+    .container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+
 }
 
 /* ************************ */
@@ -295,7 +306,7 @@
 @media(max-width: 28em) {
 
   .box-title {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     margin: 2rem 0 2rem 0;
     padding: 1rem;
   }
@@ -306,7 +317,8 @@
   }
 
   .box-description {
-    font-size: 1.2rem;
+     font-size: 1.4rem;
+     line-height: 1.5;
     
   }
 
