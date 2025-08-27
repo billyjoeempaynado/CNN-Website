@@ -86,9 +86,10 @@ body {
 /* ************************ */
 
 .container {
-  max-width: 120rem;
-  padding: 0 3.2rem;
+  width: 100%;
+  max-width: 120rem;   /* limits it on big screens */
   margin: 0 auto;
+  padding: 0 2rem;     /* less padding, so more room for boxes */
 }
 
 .grid{
