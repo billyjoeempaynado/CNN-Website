@@ -73,8 +73,13 @@
   padding: 8rem 0;
   }
 
+  .connector-row .horizontal {
+    width: 300px; /* ✅ shorter lines for fewer members */
+  }
+
   .connector-row .horizontal.wide {
-  width: 300px;
+    width: 100%; /* auto adjust */
+    max-width: 60vw;
   }
 
   .hero {
@@ -219,9 +224,7 @@
     margin-bottom: 3.2rem;
   }
 
-  .blog-box-container {
-  grid-template-columns: repeat(2, 1fr);
-  }
+  
 
   .board-member {
     width: 200px;
@@ -242,7 +245,7 @@
 
   .connector-row .horizontal.wide {
     width: 100%; /* auto adjust */
-    max-width: 90vw;
+    max-width: 60vw;
   }
 
 
@@ -342,11 +345,6 @@
     width: 60%;
     
   }
-
-  .blog-box-container {
-    grid-template-columns: 1fr;
-  }
-  
 
    .board-member {
     width: 100%;   /* ✅ full width on mobile */
