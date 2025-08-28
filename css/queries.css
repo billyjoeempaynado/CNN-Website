@@ -300,10 +300,16 @@
     
   }
 
-    .container {
-    max-width: 75%;
+  .container {
+    width: 100%;          /* ✅ take full width */
+    max-width: 100%;      /* ✅ override desktop max width */
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 1.5rem;    /* ✅ small padding for breathing room */
+  }
+
+  .hero {
+    max-width: 100%;      /* ✅ remove huge 130rem restriction */
+    padding: 0 1.5rem;
   }
 
 
