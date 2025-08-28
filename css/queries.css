@@ -302,7 +302,7 @@
 
   .container {
     width: 100%;          /* ✅ take full width */
-    max-width: 100%;      /* ✅ override desktop max width */
+    max-width: 70%;      /* ✅ override desktop max width */
     margin: 0 auto;
     padding: 0 1.5rem;    /* ✅ small padding for breathing room */
   }
