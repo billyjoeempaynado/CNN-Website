@@ -1,0 +1,57 @@
+/* Card container */
+.form-cards {
+  max-width: 900px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 cards side by side */
+  gap: 30px;
+  padding: 20px;
+}
+
+/* Individual card */
+.form-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* Card title */
+.form-card h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2e7d32; /* green theme */
+  margin-bottom: 15px;
+}
+
+/* Card description */
+.form-card p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Card button */
+.form-card .btn {
+  display: inline-block;
+  background: #2e7d32;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background 0.2s ease;
+}
+
+.form-card .btn:hover {
+  background: #1b5e20;
+}
